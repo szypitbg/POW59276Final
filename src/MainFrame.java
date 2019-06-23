@@ -12,6 +12,9 @@ public class MainFrame extends JPanel implements ActionListener {
 
 
         lGetData = new JLabel("Data : "+ new Date(), JLabel.LEFT);
+        add(lGetData);
+
+
 
 
         JScrollPane jps = new JScrollPane(TableCreator.tableCreatorCreate(
@@ -19,6 +22,7 @@ public class MainFrame extends JPanel implements ActionListener {
                 ,
                 new String[][]{{"Kupić prezent Julce"},{"Wynieść śmieci"},{"Iść na zakupy"}}));
 
+        add(jps);
 
         JScrollPane jps1 = new JScrollPane(TableCreator.tableCreatorCreate(
                 new String[]{"Tytuł filmu","Reżyser","Komentarz"}
@@ -28,12 +32,29 @@ public class MainFrame extends JPanel implements ActionListener {
                         {"Tytuł 3", "Reżyser 3", "Uwagi 3"}}));
 
 
+        add(jps1);
+        bAddFilm = new JButton("Dodaj film");
+        bAddFilm.addActionListener(this);
+        add(bAddFilm);
+        bDeleteFilm = new JButton("Usuń film");
+        bDeleteFilm.addActionListener(this);
+        add(bDeleteFilm);
+
+
         JScrollPane jps2 = new JScrollPane(TableCreator.tableCreatorCreate(
                 new String[]{"Tytuł piosenki","Autor","Komentarz"}
                 ,
-                new String[][]{{"Tytuł 1", "Reżyser 1", "Uwagi 1"},
-                        {"Tytuł 2", "Reżyser 2", "Uwagi 2"},
-                        {"Tytuł 3", "Reżyser 3", "Uwagi 3"}}));
+                new String[][]{{"Tytuł 1", "Autor 1", "Uwagi 1"},
+                        {"Tytuł 2", "Autor 2", "Uwagi 2"},
+                        {"Tytuł 3", "Autor 3", "Uwagi 3"}}));
+
+        add(jps2);
+        bAddSong = new JButton("Dodaj piosenkę");
+        bAddSong.addActionListener(this);
+        add(bAddSong);
+        bDeleteSong = new JButton("Usuń piosenkę");
+        bDeleteSong.addActionListener(this);
+        add(bDeleteSong);
 
         JScrollPane jps3 = new JScrollPane(TableCreator.tableCreatorCreate(
                 new String[]{"Przedmiot do kupienia","Komentarz"}
@@ -41,11 +62,16 @@ public class MainFrame extends JPanel implements ActionListener {
                 new String[][]{{"Artykuł 1", "Uwagi 1"},
                         {"Artykuł 2", "Uwagi 2"},
                         {"Artykuł 3", "Uwagi 3"}}));
-        add(jps);
-        add(jps1);
-        add(jps2);
+
         add(jps3);
-        add(lGetData);
+        bAddOrder = new JButton("Nowy przedmiot");
+        bAddOrder.addActionListener(this);
+        add(bAddOrder);
+        bDeleteOrder = new JButton("Usuń przedmiot");
+        bDeleteOrder.addActionListener(this);
+        add(bDeleteOrder);
+
+
 
 
     }
